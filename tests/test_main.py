@@ -3,7 +3,6 @@ from mock import patch
 
 
 class TestApp:
-
     def test_new_member(self, client):
         response = client.post(
             "/new_member",
@@ -19,7 +18,7 @@ class TestApp:
                 "phone_number": "Test",
                 "secondary_phone_number": "Test",
                 "account_number": "Test",
-                "account_owner": "Test",
+                "account_owner_name": "Test",
                 "amount": "Test",
                 "period": "Test",
                 "where_did_you_know": "Test",
@@ -42,7 +41,7 @@ class TestApp:
                 "phone_number": "Test",
                 "secondary_phone_number": "Test",
                 "account_number": "Test",
-                "account_owner": "Test",
+                "account_owner_name": "Test",
                 "amount": "Test",
                 "where_did_you_know": "Test",
             },
