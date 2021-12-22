@@ -1,4 +1,4 @@
 #!/bin/bash
 TESTING=True \
 pipenv run pytest --cov-report=xml --cov=app
-pipenv run codecov --commit=$1 -t $2
+#pipenv run codecov --commit=$1 -t $2
