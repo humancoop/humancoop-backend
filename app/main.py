@@ -20,7 +20,10 @@ class Settings(BaseSettings):
         case_sensitive = True
 
 
-origins = ["http://localhost:8080"]
+origins = [
+    "http://localhost:3000",
+    "https://onghumancoop.org",
+]
 
 app.add_middleware(
     CORSMiddleware,
