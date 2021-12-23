@@ -14,8 +14,6 @@ class MemberRequest(BaseModel):
     secondary_phone_number: str = Field(title="Volunteer name")
     account_number: str = Field(title="Volunteer name")
     account_owner_name: str = Field(title="Volunteer name")
-    amount: str = Field(title="Volunteer name")
-    period: str = Field(title="Volunteer name")
     where_did_you_know: str = Field(title="Volunteer name")
 
 
