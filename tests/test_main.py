@@ -38,7 +38,6 @@ class TestApp:
                 "postcode": "Test",
                 "email": "Test",
                 "phone_number": "Test",
-                "secondary_phone_number": "Test",
                 "account_number": "Test",
                 "account_owner_name": "Test",
                 "amount": "Test",

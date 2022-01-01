@@ -26,7 +26,6 @@ class DonationRequest(BaseModel):
     postcode: str = Field(title="Volunteer name")
     email: str = Field(title="Volunteer name")
     phone_number: str = Field(title="Volunteer name")
-    secondary_phone_number: str = Field(title="Volunteer name")
     account_number: str = Field(title="Volunteer name")
     account_owner_name: str = Field(title="Volunteer name")
     amount: str = Field(title="Volunteer name")
