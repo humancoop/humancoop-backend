@@ -19,7 +19,6 @@ class MemberRequest(BaseModel):
 
 class DonationRequest(BaseModel):
     full_name: str = Field(title="Volunteer name")
-    birthdate: str = Field(title="Volunteer name")
     nif: str = Field(title="Volunteer name")
     address: str = Field(title="Volunteer name")
     city: str = Field(title="Volunteer name")

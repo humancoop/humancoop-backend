@@ -31,7 +31,6 @@ class TestApp:
             "/new_donation",
             json={
                 "full_name": "Test",
-                "birthdate": "Test",
                 "nif": "Test",
                 "address": "Test",
                 "city": "Test",
