@@ -41,5 +41,6 @@ class EmailService:
 
             server.send_message(msg)
             server.close()
+            logger.info(f"Email sent to {EmailMessage._get_recipient()}")
         except Exception as e:
             logger.error("Error sending email: %s", e)
