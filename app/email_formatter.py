@@ -31,5 +31,5 @@ class EmailFormatter:
             f"Número de teléfono: {request.phone_number}\n"
             f"Número de cuenta: {request.account_number}\n"
             f"Nombre del titular: {request.account_owner_name}\n"
-            f"Cantidad: {request.amount}"
+            f"Cantidad: {request.amount} €"
         )

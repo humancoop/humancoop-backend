@@ -1,6 +1,7 @@
 import smtplib
 from email.message import EmailMessage
 from .schemas import MemberRequest
+from .email_formatter import EmailFormatter
 import logging
 import os
 
@@ -24,7 +25,7 @@ class EmailService:
 
     @staticmethod
     def _get_body(request):
-        return str(request)
+        return EmailFormatter.format_email_for_request(request)
 
     def send_email(request):
         try:

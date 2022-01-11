@@ -63,5 +63,5 @@ class TestEmailFormatting:
             "Número de teléfono: Test Phone Number\n"
             "Número de cuenta: Test Account Number\n"
             "Nombre del titular: Test Account Owner Name\n"
-            "Cantidad: Test Amount"
+            "Cantidad: Test Amount €"
         )
