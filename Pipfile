@@ -20,6 +20,9 @@ gunicorn = "*"
 uvloop = "*"
 httptools = "*"
 python-dotenv = "*"
+google-api-python-client = "*"
+google-auth-httplib2 = "*"
+google-auth-oauthlib = "*"
 
 [requires]
 python_version = "3.8"
