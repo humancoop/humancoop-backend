@@ -33,7 +33,7 @@ class EmailService:
     def _send_email_using_amazon_ses(request):
         client = boto3.client("ses", region_name="eu-west-3")
         try:
-            response = client.send_email(
+            client.send_email(
                 Destination={
                     "ToAddresses": [EmailService._get_recipient()],
                 },
@@ -53,10 +53,9 @@ class EmailService:
             )
         # Display an error if something goes wrong.
         except ClientError as e:
-            print(e.response["Error"]["Message"])
+            logger.error("Error sending email: %s", e)
         else:
-            print("Email sent! Message ID:"),
-            print(response["MessageId"])
+            logger.info(f"Email sent to {EmailService._get_recipient()}")
 
     @staticmethod
     def _send_email_using_gmail_smpt(request):
