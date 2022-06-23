@@ -24,14 +24,6 @@
             "markers": "python_full_version >= '3.6.2'",
             "version": "==3.6.1"
         },
-        "asgiref": {
-            "hashes": [
-                "sha256:1d2880b792ae8757289136f1db2b7b99100ce959b2aa57fd69dab783d05afac4",
-                "sha256:4a29362a6acebe09bf1d6640db38c1dc3d9217c68e6f9f6204d72667fc19a424"
-            ],
-            "markers": "python_version >= '3.7'",
-            "version": "==3.5.2"
-        },
         "boto3": {
             "hashes": [
                 "sha256:490f5e88f5551b33ae3019a37412158b76426d63d1fb910968ade9b6a024e5fe",
@@ -42,11 +34,11 @@
         },
         "botocore": {
             "hashes": [
-                "sha256:bb56fa77b8fa1ec367c2e16dee62d60000451aac5140dcce3ebddc167fd5c593",
-                "sha256:df1e9b208ff93daac7c645b0b04fb6dccd7f20262eae24d87941727025cbeece"
+                "sha256:3799d5c8642b29b347418eb26d42e541d0dc24faa5e62bc8b3812722ab2bf139",
+                "sha256:aaa019265dfea61c5355a207b14283161002d4d94e0eb85194dd04f3bdba48be"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.27.14"
+            "version": "==1.27.15"
         },
         "certifi": {
             "hashes": [
@@ -275,11 +267,11 @@
         },
         "uvicorn": {
             "hashes": [
-                "sha256:19e2a0e96c9ac5581c01eb1a79a7d2f72bb479691acd2b8921fce48ed5b961a6",
-                "sha256:5180f9d059611747d841a4a4c4ab675edf54c8489e97f96d0583ee90ac3bfc23"
+                "sha256:ba66bccb012a1662ef0de7d8c5ec416a6dcf5d9f64c274f8df67d2df44a4b0b1",
+                "sha256:fde065bc11c05025fbb33f7602826e7520237c45a67ffa040993ae04ad4d7ab3"
             ],
             "index": "pypi",
-            "version": "==0.17.6"
+            "version": "==0.18.0"
         },
         "uvloop": {
             "hashes": [
@@ -385,7 +377,7 @@
         },
         "coverage": {
             "extras": [
-                "toml"
+
             ],
             "hashes": [
                 "sha256:01c5615d13f3dd3aa8543afc069e5319cfa0c7d712f6e04b920431e5c564a749",
