@@ -18,8 +18,10 @@ class EmailService:
         return "Nueva donación"
 
     @staticmethod
-    def _get_recipient() -> str:
-        return os.getenv("RECIPIENT_EMAIL")
+    def _get_recipient(destination) -> str:
+        if destination == "accounting":
+            return os.getenv("ACCOUNTING_EMAIL")
+        return os.getenv("MAIN_EMAIL")
 
     @staticmethod
     def _get_sender() -> str:
@@ -30,12 +32,12 @@ class EmailService:
         return EmailFormatter.format_email_for_request(request)
 
     @staticmethod
-    def _send_email_using_amazon_ses(request):
+    def _send_email_using_amazon_ses(request, destination):
         client = boto3.client("ses", region_name="eu-west-3")
         try:
             client.send_email(
                 Destination={
-                    "ToAddresses": [EmailService._get_recipient()],
+                    "ToAddresses": [EmailService._get_recipient(destination)],
                 },
                 Message={
                     "Body": {
@@ -55,10 +57,10 @@ class EmailService:
         except ClientError as e:
             logger.error("Error sending email: %s", e)
         else:
-            logger.info(f"Email sent to {EmailService._get_recipient()}")
+            logger.info(f"Email sent to {EmailService._get_recipient(destination)}")
 
     @staticmethod
-    def _send_email_using_gmail_smpt(request):
+    def _send_email_using_gmail_smpt(request, destination):
         try:
             server = smtplib.SMTP("smtp.gmail.com", 587)
             server.starttls()
@@ -69,16 +71,16 @@ class EmailService:
             msg.set_content(EmailService._get_body(request))
             msg["Subject"] = EmailService._get_subject(request)
             msg["From"] = EmailService._get_sender()
-            msg["To"] = EmailService._get_recipient()
+            msg["To"] = EmailService._get_recipient(destination)
 
             server.send_message(msg)
             server.close()
-            logger.info(f"Email sent to {EmailService._get_recipient()}")
+            logger.info(f"Email sent to {EmailService._get_recipient(destination)}")
         except Exception as e:
             logger.error("Error sending email: %s", e)
 
     @staticmethod
-    def send_email(request):
+    def send_email(request, destination):
         # This is disabled since GMAIL does not allow SMPT anymore
         # EmailService._send_email_using_gmail_smpt(request)
-        EmailService._send_email_using_amazon_ses(request)
+        EmailService._send_email_using_amazon_ses(request, destination)

@@ -38,12 +38,12 @@ app.add_middleware(
 @app.post("/new_member", status_code=HTTPStatus.OK)
 def member(request: MemberRequest):
     logger.info(request)
-    EmailService.send_email(request)
+    EmailService.send_email(request, "main")
     return Response(status_code=HTTPStatus.OK)
 
 
 @app.post("/new_donation", status_code=HTTPStatus.OK)
 def donation(request: DonationRequest):
     logger.info(request)
-    EmailService.send_email(request)
+    EmailService.send_email(request, "accounting")
     return Response(status_code=HTTPStatus.OK)
