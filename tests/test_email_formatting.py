@@ -16,6 +16,7 @@ class TestEmailFormatting:
                 years_of_experience=3,
                 have_experience=True,
                 first_time=False,
+                where_did_you_know="Test Where Did You Know",
             )
         )
         assert (
@@ -26,8 +27,10 @@ class TestEmailFormatting:
             "Ya es miembro: Sí\n"
             "Es sanitario: No\n"
             "Experiencia profesional: Test Professional Experience\n"
-            "Tiene experiencia: Sí\n"
+            "Años de experiencia: 3\n"
+            "Tiene experiencia en voluntariado: Sí\n"
             "Primera vez en Humancoop: No\n"
+            "Dónde nos conoció?: Test Where Did You Know\n"
         )
 
         result = EmailFormatter.format_email_for_request(

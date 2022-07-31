@@ -12,6 +12,7 @@ class MemberRequest(BaseModel):
     years_of_experience: int = Field(title="Volunteer name")
     have_experience: bool = Field(title="Volunteer name")
     first_time: bool = Field(title="Volunteer name")
+    where_did_you_know: str = Field(title="Volunteer name")
 
 
 class DonationRequest(BaseModel):

@@ -19,8 +19,10 @@ class EmailFormatter:
                 f"Ya es miembro: {EmailFormatter._format_bool(request.already_a_member)}\n"
                 f"Es sanitario: {EmailFormatter._format_bool(request.health_worker)}\n"
                 f"Experiencia profesional: {request.professional_experience}\n"
-                f"Tiene experiencia: {EmailFormatter._format_bool(request.have_experience)}\n"
+                f"Años de experiencia: {request.years_of_experience}\n"
+                f"Tiene experiencia en voluntariado: {EmailFormatter._format_bool(request.have_experience)}\n"
                 f"Primera vez en Humancoop: {EmailFormatter._format_bool(request.first_time)}\n"
+                f"Dónde nos conoció?: {request.where_did_you_know}\n"
             )
         return (
             f"Nombre: {request.full_name}\n"
