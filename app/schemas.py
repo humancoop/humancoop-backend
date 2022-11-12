@@ -27,3 +27,16 @@ class DonationRequest(BaseModel):
     account_number: str = Field(title="Volunteer name")
     account_owner_name: str = Field(title="Volunteer name")
     amount: str = Field(title="Volunteer name")
+
+
+class SocioRequest(BaseModel):
+    full_name: str = Field(title="Volunteer name")
+    nif: str = Field(title="Volunteer name")
+    address: str = Field(title="Volunteer name")
+    city: str = Field(title="Volunteer name")
+    province: str = Field(title="Volunteer name")
+    postcode: str = Field(title="Volunteer name")
+    email: str = Field(title="Volunteer name")
+    phone_number: str = Field(title="Volunteer name")
+    account_number: str = Field(title="Volunteer name")
+    account_owner_name: str = Field(title="Volunteer name")

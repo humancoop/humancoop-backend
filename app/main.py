@@ -1,7 +1,7 @@
 from pydantic import BaseSettings
 from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
-from .schemas import MemberRequest, DonationRequest
+from .schemas import MemberRequest, DonationRequest, SocioRequest
 from .email import EmailService
 from http import HTTPStatus
 import logging
@@ -44,6 +44,13 @@ def member(request: MemberRequest):
 
 @app.post("/new_donation", status_code=HTTPStatus.OK)
 def donation(request: DonationRequest):
+    logger.info(request)
+    EmailService.send_email(request, "accounting")
+    return Response(status_code=HTTPStatus.OK)
+
+
+@app.post("/new_socio", status_code=HTTPStatus.OK)
+def donation(request: SocioRequest):
     logger.info(request)
     EmailService.send_email(request, "accounting")
     return Response(status_code=HTTPStatus.OK)
