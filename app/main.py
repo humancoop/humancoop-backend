@@ -50,7 +50,7 @@ def donation(request: DonationRequest):
 
 
 @app.post("/new_socio", status_code=HTTPStatus.OK)
-def donation(request: SocioRequest):
+def socio(request: SocioRequest):
     logger.info(request)
     EmailService.send_email(request, "accounting")
     return Response(status_code=HTTPStatus.OK)

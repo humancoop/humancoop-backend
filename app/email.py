@@ -1,6 +1,6 @@
 import smtplib
 from email.message import EmailMessage
-from .schemas import MemberRequest
+from .schemas import MemberRequest, SocioRequest
 from .email_formatter import EmailFormatter
 import logging
 import os
@@ -15,6 +15,8 @@ class EmailService:
     def _get_subject(request):
         if isinstance(request, MemberRequest):
             return "Nuevo miembro"
+        elif isinstance(request, SocioRequest):
+            return "Nuevo socio"
         return "Nueva donación"
 
     @staticmethod
