@@ -21,7 +21,7 @@ uvloop = "*"
 httptools = "*"
 python-dotenv = "*"
 boto3 = "*"
-httpx = "~=0.23.3"
+httpx = "~=0.24.0"
 
 [requires]
 python_version = "3.8"
